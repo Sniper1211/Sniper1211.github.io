@@ -8,8 +8,9 @@ body{
 }
 
 .box{
-	width: 1000px;
+	width: 750px;
 	height: 280px;
+	padding-top: 10%;
 	margin: 50px auto;
 }
 
