@@ -11,7 +11,7 @@ body{
 	width: 750px;
 	height: 280px;
 	padding-top: 10%;
-	margin: 50px auto;
+	margin: 80px auto;
 }
 
 .box .link{
@@ -175,3 +175,38 @@ body{
 	margin-left: -3px;
 	bottom: -14px;
 }
+
+.menu {
+	max-height: 70px;
+	max-width: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 5px;
+	border: 10px solid #333;
+	text-align: center;
+}
+
+.menu {
+	color:#333;
+	font-size:20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
