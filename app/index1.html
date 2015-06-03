@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>title</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="app.css">
+	<style type="text/css">
+	
+    .menu {
+      font-size:12px;
+    }
+    .menu li {/*水平菜单*/
+      float:left;
+      list-style:none;
+      position:relative;/*把包含块移动li元素*/
+    }
+    .menu a {
+      display:block;
+      height:32px;
+      width:100px;
+      line-height:32px;
+      background:#a5dee4;
+      color:#D0104C;
+      text-decoration:none;
+      text-align:center;
+    }
+    .menu a:hover {
+      background:#369;
+      color:#fff;
+    }
+    /*新增的二级菜单部分*/
+    .menu ul ul {
+      visibility:hidden;/*开始时是隐藏的*/
+      position:absolute;
+      left:0px;
+      top:32px;
+    }
+    .menu ul li:hover ul,/*非IE6*/
+    .menu ul a:hover ul{/*IE6*/
+      visibility:visible;
+    }
+    .menu ul ul li {
+      clear:both;/*垂直显示*/
+      text-align:left;
+    }
+    .menu ul li a strong{
+      color:#B19693;
+    }
+	</style>
+</head>
+<body>
+<div class="menu">
+    <ul>
+      <li>
+        <a href="#">菜单</a>
+        <ul>
+          <li><a href="#">二级菜单_11</a></li>
+          <li><a href="#">二级菜单_12</a></li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li><a href="#">二级菜单_11</a></li>
+          <li><a href="#">二级菜单_12</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">菜单</a>
+        <ul>
+          <li><a href="#">二级菜单_21</a></li>
+          <li><a href="#">二级菜单_22</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">菜单</a>
+        <ul>
+          <li><a href="#">二级菜单_31</a></li>
+          <li><a href="#">二级菜单_32</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+<div class="side-nav" role="navigation">
+	<ul class="nav-side-nav">
+		<li><a class="tooltip-side-nav" href="#onepage"></a></li>
+		<li><a class="tooltip-side-nav" href="#threepage"></a></li>
+		<li><a class="tooltip-side-nav" href="#twopage"></a></li>
+	</ul>
+</div>
+<!-- 第一屏开始 -->
+	<div class="onepage" id="onepage">
+		<div class="onepage-bg" id="onepagebg">
+			<div class="container">
+				<div class="row">
+					<div class="title-text">
+						<div class="col-md-12 headfontsize">
+							<h1 class="headh1content">
+														</h1>
+							<p> <font   size=6 color=sky-blue> </font></p>
+													</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- 第一屏结束 -->
+<!-- 第二屏开始 -->
+	<div class="threepage" id="threepage">
+		<div class="container">
+			<div class="course-detail-text">
+				<			<p>  <font size=7  color=yellow>最重要的不是你所处的位置，而是你朝向的方向    </font></p>
+			</div>
+			<div id="carousel-example-generic" class="carousel slide" data-interval="5000" style="height:300px">
+				<!-- <ol class="carousel-indicators" style="margin-top:200px">
+					<li data-target="#carousel-example-generic" data-slide="0" class="active"></li>
+					<li data-target="#carousel-example-generic" data-slide="1" class=""></li>
+					<li data-target="#carousel-example-generic" data-slide="2" class=""></li>
+				</ol> -->
+				<div class="carousel-inner">
+					<div class="item active" style="aling:center"> <!--style="width:500px-->
+											</div>
+					<!-- <div class="item" style="width:500px">
+						src="http://placehold.it/800x240/487070.png">
+					</div>
+					<div class="item" style="width:500px">
+						<img src="http://placehold.it/800x240/fad392.png">
+					</div> -->
+				</div>
+				<!-- <a class="left carousel-control" href="#carousel-example-genric" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left">						
+					</span>
+				</a>
+				<a class="right carousel-control" href="#carousel-example-genric" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right">					
+					</span>
+				</a> -->
+			</div>
+		</div>
+	</div>
+<!-- 第二屏结束 -->
+<!-- 第三屏开始 -->
+	<div class="twopage" id="twopage">
+		<div class="twopage-text">
+			<h1 class="twopage-text-h1"> 
+<font size=6 color=sky-blue> 拇指家园——又一校园神器横空出世  </font> <img src="img/120x120.jpg">
+					</h1>
+		</div>
+		<div class="row">
+			<div class="twopage-courses col-md-4">
+   			<a href="#">
+					<img src="img/400x400_1.jpg" style="width:100%">
+					<div class="classicon">
+						<h3>珍惜校园时光</h3>
+						<h1><strong>把握青春年华</strong></h1>
+					</div>
+				</a>
+			</div>
+			<div class="twopage-courses col-md-4">
+				<a href="#">
+					<img src="img/400x400_2.jpg" style="width:100%">
+					<div class="classicon">
+						<h3>参与课外实践</h3>
+						<h1><strong>提高综合能力</strong></h1>
+					</div>
+				</a>
+			</div>
+			<div class="twopage-courses col-md-4">
+				<a href="#">
+					<img src="img/400x400_3.jpg" style="width:100%">
+					<div class="classicon">
+						<h3>提高就业创业能力</h3>
+						<h1><strong>争做有为青年</strong></h1>
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="twopagebtn">
+			<a id="twopage-easy" href="#onepage" class="btn btn-success btn-lg">返回顶部</a>
+		</div>
+	</div>
+<!-- 第三屏结束 -->
+
+
+
+
+
+</body>
+</html>                

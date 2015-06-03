@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<title>CSS多级菜单</title>
+<meta charset="utf-8"/>
+</head>
+<body>
+  <style type="text/css">
+    * {
+      margin:0;
+      padding:0;
+    }
+    .menu {
+      font-size:12px;
+      position: relative;
+      margin: 0 auto;
+    }
+    .menu li {/*水平菜单*/
+      float:left;
+      list-style:none;
+      position:relative;/*把包含块移动li元素*/
+    }
+    .menu a {
+      display:block;
+      height:40px;
+      width:300px;
+      line-height:40px;
+      background:#a5dee4;
+      color:#D0104C;
+      text-decoration:none;
+      text-align:center;
+    }
+    .menu a:hover {
+      background:#369;
+      color:#fff;
+      transition:0.5s;
+      -webkit-transition:0.5s;
+    }
+    /*新增的二级菜单部分*/
+    .menu ul ul {
+      visibility:hidden;/*开始时是隐藏的*/
+      position:absolute;
+      left:0px;
+      top:40px;
+    }
+    .menu ul li:hover ul,
+    .menu ul a:hover ul{
+      visibility:visible;
+      transition:0.5s;
+      -webkit-transition:0.5s;
+    }
+    .menu ul ul li {
+      clear:both;/*垂直显示*/
+      text-align:left;
+    }
+    .menu ul li a strong{
+      color:#B19693;
+    }
+
+    .firstscreen{
+        max-width: 1000px;
+        height: 300px;
+        margin: 0 auto;
+        background: #562E37;
+        position: relative;
+        top: 40px;
+    }
+  </style>
+  <div class="menu">
+    <ul>
+      <li>
+        <a href="#">菜单</a>
+        <ul>
+          <li><a href="#">二级菜单_11</a></li>
+          <li><a href="#">二级菜单_12</a></li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li><a href="#">二级菜单_11</a></li>
+          <li><a href="#">二级菜单_12</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">菜单</a>
+        <ul>
+          <li><a href="#">二级菜单_21</a></li>
+          <li><a href="#">二级菜单_22</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">菜单</a>
+        <ul>
+          <li><a href="#">二级菜单_31</a></li>
+          <li><a href="#">二级菜单_32</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="firstscreen">
+      111
+  </div>
+</body>
+</html>
