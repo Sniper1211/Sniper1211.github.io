@@ -5,6 +5,7 @@
 
 body{
 	background: url('http://note.wiz.cn/layout-mobile/img/recorder/qrcode-bg3.0799c9e3.png');
+	max-width: 100%;
 }
 
 .box{
