@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>task0002</title>
-</head>
-<body>
-	<center>
-		<input id="number1" type="text"><br>
-		<input id="number2" type="text"><br>
-		<span id="result"></span><br>
-		<button id="addbtn"></button>
-	</center>
-	<script>
-		function $(id) {
+function $(id) {
 			return document.getElementById(id);
 		}
 
@@ -36,7 +21,4 @@
 	    	$("addbtn").addEventListener("click", addEventHandle, false);
 		}
 
-initEvent();
-	</script>	
-</body>
-</html>
+		initEvent();
