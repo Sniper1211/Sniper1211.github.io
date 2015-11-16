@@ -4,7 +4,8 @@
 }
 
 body{
-	background: url('https://unsplash.it/1440/900');
+	background: #554236;
+	opacity: 0,8;
 	max-width: 100%;
 }
 
