@@ -227,11 +227,13 @@ footer {
 	text-align: center;
 	position: absolute;
 	bottom: 0px;
-	background-color: #e5e5e5;
+	background-color: #736151;
 }
 
 footer div a {
-	color: #e8e8e8;
+	color: #f0f0f0;
+	position: relative;
+	top: 15px;
 }
 
 
