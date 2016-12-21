@@ -4,8 +4,8 @@
 }
 
 body{
-	/*background: #343434;*/
-	background-image: url('https://unsplash.it/1820/800/?random');
+	background: #1e193d;
+	/*background-image: url('https://unsplash.it/1820/800/?random');*/
 	opacity: 0,8;
 	max-width: 100%;
 }
@@ -13,25 +13,26 @@ body{
 nav {
 	width: 100%;
 	height: 60px;
-	background: #d8d8d8;
-	box-shadow: 0 5px 1px #d8d8d8;
-	// background-image: url()
+	background: #444;
+	box-shadow: 0 5px 1px #444;
+	/*background-image: url()*/
+	text-align: center;
 }
 
 
 h1 {
 	font-size:3rem;
-	align-self: center;
-	color: DeepSkyBlue;
+	/*align-self: center;*/
+	color: #567aa0;
 	font-family: "微软雅黑",Arial,Helvetica,sans-serif;
 	font-weight:  bolder;
-	// border: 2px solid rgba(255,255,255,0.8);
+	/*border: 2px solid rgba(255,255,255,0.8);*/
 	border-radius: 5px;
 	padding-left: 20px;
 	margin: 0 auto;
 	line-height: 60px;
-	position: absolute;
-	left: 45%;
+	/*position: absolute;*/
+	/*left: 45%;*/
 	box-sizing:border-box;
 }
 
