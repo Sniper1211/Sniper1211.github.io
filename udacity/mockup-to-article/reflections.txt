@@ -7,3 +7,12 @@ You've learned a lot about web development so far. I want you to take a moment t
 ---
 
 Your response goes here!
+
+---
+
+My anwser in Chinese:
+
+1.使用 HTML 的标记和 CSS 改变样式，包括：删除线<del>、上角标<sup>、调整字体等
+2.比较简单：使用<p>标签、插入图片<img>、添加链接<a href="">等
+3.比较困难：使用 HTML 语言对原型 mockup 的完全实现，涉及到一些样式的调整，包括更换字体(Times New Roman)、调整距离(padding)
+4.充分使用 Google。在<head>中设置 CSS 样式；对于不熟悉的属性，使用 MDN /W3school 查询用法
