@@ -5,7 +5,7 @@
 
 body{
 	/*background: #1e193d;*/
-	background: #aaa;
+	background: #1d1d1d;
 	/*background-image: url('https://unsplash.it/1820/800/?random');*/
 	opacity: 0,8;
 	max-width: 100%;
@@ -51,6 +51,7 @@ h1 {
 	margin: 0px 20px;
 	float: left;
 	position: relative;
+	background: #3f4138;
 }
 
 .link {
