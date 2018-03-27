@@ -37,8 +37,15 @@ for quizNum in range(35):
     # Shuffle the order of the states.
     states = list(capitals.keys())
     random.shuffle(states)
-    print(states)
-    # TODO: Write out the header for the quiz.
-    # TODO: Shuffle the order of the states.
-    # TODO: Loop through all 50 states, making a question for each .
-    exit()
+
+    # Loop through all 50 states, making a question for each.
+    for questionNum in range(50):
+        # Get right and wrong answers.
+        correctAnswer = capitals[states[questionNum]]
+        wrongAnswer = list(capitals.values())
+        del wrongAnswer[wrongAnswer.index(correctAnswer)]
+        answerOptions = wrongAnswer + [correctAnswer]
+        random.shuffle(answerOptions)
+
+        # Write the question and the answer options to the quiz file.
+        
