@@ -48,4 +48,3 @@ for quizNum in range(35):
         random.shuffle(answerOptions)
 
         # Write the question and the answer options to the quiz file.
-        
