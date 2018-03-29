@@ -30,7 +30,7 @@ for quizNum in range(35):
     answerKeyFile = open('capitalsquiz_answers%s.txt' % (quizNum + 1), 'w')
 
     # Write out the header for the quiz.
-    quizFile.write('Name:\n\nDate:]n]nPeriod:\n\n')
+    quizFile.write('Name:\n\nDate:\n\nPeriod:\n\n')
     quizFile.write((' ' * 20) + 'State Capitals Quiz (Form %s)' % (quizNum + 1))
     quizFile.write('\n\n')
 
@@ -42,9 +42,10 @@ for quizNum in range(35):
     for questionNum in range(50):
         # Get right and wrong answers.
         correctAnswer = capitals[states[questionNum]]
-        wrongAnswer = list(capitals.values())
-        del wrongAnswer[wrongAnswer.index(correctAnswer)]
-        answerOptions = wrongAnswer + [correctAnswer]
+        wrongAnswers = list(capitals.values())
+        del wrongAnswers[wrongAnswers.index(correctAnswer)]
+        wrongAnswers = random.sample(wrongAnswers, 3)
+        answerOptions = wrongAnswers + [correctAnswer]
         random.shuffle(answerOptions)
 
         # Write the question and the answer options to the quiz file.
