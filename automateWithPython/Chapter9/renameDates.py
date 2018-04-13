@@ -25,6 +25,7 @@ for amerFilename in os.listdir('.'):
     yearPart = mo.groups(6)
     afterPart = mo.groups(8)
 
+
 # TODO: Skip files without a date.
 
 # TODO: Get the different parts of the filename.
