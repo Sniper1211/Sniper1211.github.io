@@ -35,6 +35,3 @@ euroFilename = os.path.join(absWorkingDir, euroFilename)
 
 # Rename the fils.
 print('Renaming "%s" to "%s"...' % (amerFilename, euroFilename))
-
-
-#shutil.movie(amerFilename, euroFilename) # uncomment after testing
