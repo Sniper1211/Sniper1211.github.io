@@ -18,14 +18,25 @@
         canvas.height = 600;
         var context = canvas.getContext("2d");
 
+        context.beginPath();
         context.moveTo(100,100);
         context.lineTo(500,100);
-        context.lineTo(500,500);
-        context.lineTo(100,500);
-        context.lineTo(100,100);
-        // context.moveTo(100,500);
         context.lineWidth = 5;
-        context.strokeStyle = "#AA394C";
+        context.strokeStyle = "red";
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(500,100);
+        context.lineTo(500,500);
+        context.lineWidth = 5;
+        context.strokeStyle = "gray";
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(500,500);
+        context.lineTo(100,500);
+        context.lineWidth = 5;
+        context.strokeStyle = "blue";
         context.stroke();
 
 
