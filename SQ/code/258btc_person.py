@@ -37,3 +37,5 @@ for i in range(2415, 3012):
     print('*'*20)
     print(i)
     getInfo(i)
+
+# 仅作学习使用
