@@ -2,9 +2,9 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>新的画布</title>
+    <title>2048游戏界面</title>
     <style>
-        body { background: #6699a1; }
+        body { background: url("./images/bg3.jpg") repeat; }
         #canvas { border: 1px solid #aaaaaa; display: block; margin: 50px auto; }
     </style>
 </head>
@@ -24,9 +24,21 @@
         context.fillStyle = "#FFF";
         context.fillRect(0,0,800,600);
 
-        drawRoundRect(context, 200, 100, 400, 400, 50);
+        drawRoundRect(context, 200, 100, 400, 400, 5);
+        context.fillStyle = "#AA7B41";
         context.strokeStyle = "#0078AA";
         context.stroke();
+        context.fill();
+
+        for(var i = 1; i <= 4; i++){
+            for(var j = 1; j <= 4; j++){
+                drawRoundRect(context, 200 + 16 * i + 80 * (i - 1), 100 + 16 * j + 80 * (j - 1), 80, 80, 5);
+                context.fillStyle = "#CCBFB4";
+                context.strokeStyle = "#0078AA";
+                context.stroke();
+                context.fill();
+            }
+        }
     }
 
     function drawRoundRect(cxt, x, y, width, height, radius){
