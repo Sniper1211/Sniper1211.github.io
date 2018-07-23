@@ -15,4 +15,4 @@ prod = calcProd()
 endTime = time.time()
 print('The result is %s digits long.' % (len(str(prod))))
 print('Took %s seconds to calculate.' % (endTime - startTime))
-
+# print(prod)
