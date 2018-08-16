@@ -182,7 +182,7 @@ h1 {
 }
 
 .box .tip{
-	position: absolute; 
+	position: absolute;
 	padding: 0px 14px;
 	height: 35px;
 	line-height: 35px;
@@ -206,7 +206,7 @@ h1 {
 	position: absolute;
 	width: 0;
 	height: 0;
-	overflow: hidden; 
+	overflow: hidden;
 	border: 7px solid transparent;
 	border-top-color: #2dcb70;
 	left: 50%;
