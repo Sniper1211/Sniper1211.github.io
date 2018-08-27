@@ -18,6 +18,9 @@ nav {
 	box-shadow: 0 5px 1px #444;
 	/*background-image: url()*/
 	text-align: center;
+	position: fixed;
+	top: 0px;
+	left: 0px;
 }
 
 
