@@ -16,3 +16,5 @@ decoded = re.text.encode('latin-1').decode('unicode_escape')
 
 soup = BeautifulSoup(decoded, 'html.parser')
 print(soup)
+
+# 找到字典,之后遍历,找到具体的 value
