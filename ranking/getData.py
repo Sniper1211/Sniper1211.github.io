@@ -15,6 +15,10 @@ re = requests.get(url, headers=headers)
 decoded = re.text.encode('latin-1').decode('unicode_escape')
 
 soup = BeautifulSoup(decoded, 'html.parser')
-print(soup)
+soup = str(soup)
+result = soup[16: -2]
+
+
+print(result)
 
 # 找到字典,之后遍历,找到具体的 value
