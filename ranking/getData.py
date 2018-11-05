@@ -12,7 +12,7 @@ url = "http://insight.baidu.com/base/search/rank/list?pageSize=20&source=0&toFix
 
 url1 = "http://insight.baidu.com/base/search/rank/list?pageSize=20&source=0&toFixed=1&filterType=1&dateType=20181015~20181021&dimensionid=78&rateType=1000&filterNodes=23871%7C80&callback=_jsonp6g32mtviddc"
 
-
+# url 结尾不带 callback,正常值
 def getProblem(url):
     headers = {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'}
@@ -39,7 +39,7 @@ def getProblem(url):
         r = item['rank']
         print(i, v, r)
 
-
+#  url 结尾带上 callback
 def getOrigin(url):
     headers = {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'}
@@ -68,8 +68,3 @@ def getOrigin(url):
         print(i, v, r)
 
 
-getProblem(url)
-print('='*30)
-print('='*30)
-print('='*30)
-getOrigin(url1)
