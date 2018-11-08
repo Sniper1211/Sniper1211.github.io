@@ -3,10 +3,15 @@
 
 import requests
 from bs4 import BeautifulSoup
-import time
+import datetime
 
-data = time.time()
-print(data)
+date_now = datetime.datetime.now()
+print(date_now)
+this_week_start_date = str(date_now-datetime.timedelta(days=date_now.weekday())).split()[0]
+this_week_end_date = str(date_now+datetime.timedelta(days=6-date_now.weekday())).split()[0]
+
+
+
 
 # 目标 url
 
