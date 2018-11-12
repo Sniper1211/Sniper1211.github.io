@@ -6,12 +6,12 @@ from bs4 import BeautifulSoup
 import datetime
 
 date_now = datetime.datetime.now()
-print(date_now)
+# print(date_now)
 this_week_start_date = str(date_now-datetime.timedelta(days=date_now.weekday())).split()[0]
 this_week_end_date = str(date_now+datetime.timedelta(days=6-date_now.weekday())).split()[0]
 
 
-
+# urltest = "http://insight.baidu.com/base/search/rank/list?pageSize=20&source=0&toFixed=1&filterType=1&dateType=20180806~20180812&dimensionid=78&rateType=1000&filterNodes=23871%7C80&callback=_jsonp6g32mtviddc"
 
 # 目标 url
 
@@ -74,6 +74,7 @@ def getOrigin(url):
         i = item['item']
         v = item['value']
         r = item['rank']
-        print(i, v, r)
+        print(r, i, v)
 
 
+getOrigin(url42)
