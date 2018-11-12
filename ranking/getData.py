@@ -77,4 +77,4 @@ def getOrigin(url):
         print(r, i, v)
 
 
-getOrigin(url01)
+getOrigin(url38)
