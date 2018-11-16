@@ -25,6 +25,7 @@ url42 = "http://insight.baidu.com/base/search/rank/list?pageSize=20&source=0&toF
 url43 = "http://insight.baidu.com/base/search/rank/list?pageSize=20&source=0&toFixed=1&filterType=1&dateType=20181022~20181028&dimensionid=78&rateType=1000&filterNodes=23871%7C80&callback=_jsonp6g32mtviddc"
 url44 = "http://insight.baidu.com/base/search/rank/list?pageSize=20&source=0&toFixed=1&filterType=1&dateType=20181029~20181104&dimensionid=78&rateType=1000&filterNodes=23871%7C80&callback=_jsonp6g32mtviddc"
 url45 = "http://insight.baidu.com/base/search/rank/list?pageSize=20&source=0&toFixed=1&filterType=1&dateType=20181105~20181111&dimensionid=78&rateType=1000&filterNodes=23871%7C80&callback=_jsonp6g32mtviddc"
+url46 = "http://insight.baidu.com/base/search/rank/list?pageSize=20&source=0&toFixed=1&filterType=1&dateType=20181112~20181117&dimensionid=78&rateType=1000&filterNodes=23871%7C80&callback=_jsonp6g32mtviddc"
 
 # url 结尾不带 callback,正常值
 def getProblem(url):
