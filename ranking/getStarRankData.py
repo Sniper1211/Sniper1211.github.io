@@ -83,4 +83,4 @@ def getOrigin(url):
         print('test,', i+',', v)
 
 
-getOrigin(urltest)
+getOrigin(url46)
