@@ -36,4 +36,5 @@ def getOrigin(url):
         r = item['rank']
         print('test,', i+',', v)
 
+
 getOrigin(urltest)
