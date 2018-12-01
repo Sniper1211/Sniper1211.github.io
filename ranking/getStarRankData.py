@@ -27,6 +27,7 @@ url44 = "http://insight.baidu.com/base/search/rank/list?pageSize=20&source=0&toF
 url45 = "http://insight.baidu.com/base/search/rank/list?pageSize=20&source=0&toFixed=1&filterType=1&dateType=20181105~20181111&dimensionid=78&rateType=1000&filterNodes=23871%7C80&callback=_jsonp6g32mtviddc"
 url46 = "http://insight.baidu.com/base/search/rank/list?pageSize=20&source=0&toFixed=1&filterType=1&dateType=20181112~20181118&dimensionid=78&rateType=1000&filterNodes=23871%7C80&callback=_jsonp6g32mtviddc"
 url47 = "http://insight.baidu.com/base/search/rank/list?pageSize=20&source=0&toFixed=1&filterType=1&dateType=20181119~20181125&dimensionid=78&rateType=1000&filterNodes=23871%7C80&callback=_jsonp6g32mtviddc"
+url48 = "http://insight.baidu.com/base/search/rank/list?pageSize=20&source=0&toFixed=1&filterType=1&dateType=20181126~20181202&dimensionid=78&rateType=1000&filterNodes=23871%7C80&callback=_jsonp6g32mtviddc"
 
 # url 结尾不带 callback,正常值
 def getProblem(url):
@@ -84,4 +85,4 @@ def getOrigin(url):
         print('test,', i+',', v)
 
 
-getOrigin(url47)
+getOrigin(url48)
