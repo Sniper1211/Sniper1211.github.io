@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 
-import requests,random, time
+import requests,random, time, json
 from bs4 import BeautifulSoup
 
 ip_list = [
@@ -13,6 +13,7 @@ ip_list = [
     "221.1.200.242:61957",
     "39.137.168.230:8080",
     "117.131.235.198:8060",
+    "1.198.72.158:9999",
     ]
 user_agent_list = [
      "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/22.0.1207.1 Safari/537.1",
@@ -39,7 +40,3 @@ url = 'https://www.douban.com/'
 
 UA = random.choice(user_agent_list)
 IP = random.choice(ip_list)
-
-print(UA)
-print(IP)
-
