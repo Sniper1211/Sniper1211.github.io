@@ -1,102 +1,119 @@
-#!/usr/bin/python
+# /usr/bin/env python
 # -*- coding:utf-8 -*-
 
+
+from urllib import request, parse
 from bs4 import BeautifulSoup
-import datetime
-import requests
+import http.cookiejar
 import json
 import random
+import time
+import configparser
+import re
+import math
 
-ip_random = -1
-article_tag_list = []
-article_type_list = []
+'''
+构建公共请求头
+'''
 
 
-def get_html(url):
-    header = {
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36'
+def build_opener():
+    cookie = http.cookiejar.CookieJar()
+    cookie_processor = request.HTTPCookieProcessor(cookie)
+    opener = request.build_opener(cookie_processor)
+    opener.addheaders = [("User-Agent",
+                          "Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1"),
+                         ("Referer", "https://passport.weibo.cn"),
+                         ("Origin", "https://passport.weibo.cn"),
+                         ("Host", "passport.weibo.cn")]
+    request.install_opener(opener)
+
+
+# 登录
+def login(code=0):
+    login_data = configparser.ConfigParser()
+    login_data.read("user.ini")  # 将用户名密码放在user.ini配置文件
+
+    username = login_data.get("LoginInfo", "email")
+    password = login_data.get("LoginInfo", "password")
+    login_url = 'https://passport.weibo.cn/sso/login'
+
+    # 构造登录参数
+    params = {
+        'username': username,
+        'password': password,
+        'savestate': '1',
+        'r': '',
+        'ec': '0',
+        'pagerefer': '',
+        'entry': 'mweibo',
+        'wentry': '',
+        'loginfrom': '',
+        'client_id': '',
+        'code': '',
+        'qq': '',
+        'mainpageflag': '1',
+        'hff': '',
+        'hfp': ''
     }
-    global ip_random
-    ip_rand, proxies = get_proxie(ip_random)
-    print(proxies)
-    try:
-        request = requests.get(url=url, headers=header, proxies=proxies, timeout=3)
-    except:
-        request_status = 500
+
+    params = parse.urlencode(params).encode('utf-8')
+
+    req = request.Request(login_url, params, method="POST")
+    res = request.urlopen(req)
+
+    result = res.read().decode('utf-8')
+    login_result = json.loads(result)
+    if login_result['msg'] == '':
+        print('登陆成功')
+        return True
     else:
-        request_status = request.status_code
-    print(request_status)
-    while request_status != 200:
-        ip_random = -1
-        ip_rand, proxies = get_proxie(ip_random)
-        print(proxies)
-        try:
-            request = requests.get(url=url, headers=header, proxies=proxies, timeout=3)
-        except:
-            request_status = 500
-        else:
-            request_status = request.status_code
-        print(request_status)
-    ip_random = ip_rand
-    request.encoding = "utf-8"
-    html = request.content
+        print(login_result['msg'])
+        return False
+
+
+# 获取发微博需要的st参数
+def get_st():
+    url = 'https://m.weibo.cn/compose'
+    req = request.Request(url)
+    res = request.urlopen(req)
+    html = res.read().decode('utf-8')
+
+    return re.search("st: '(.*)'", html).group(1)
+
+
+# 发微博
+def weibo(content):
+    st = get_st()
+    add_weibo_url = 'https://m.weibo.cn/api/statuses/update'
+
+    # 构造登录参数
+    params = {
+        'content': content,
+        'st': st
+    }
+
+    params = parse.urlencode(params).encode('utf-8')
+    req = request.Request(add_weibo_url, params, method="POST")
+    res = request.urlopen(req)
+    html = res.read().decode('utf-8')
     print(html)
-    return html
 
 
-def get_proxie(random_number):
-    with open('ip.txt', 'r') as file:
-        ip_list = json.load(file)
-        if random_number == -1:
-            random_number = random.randint(0, len(ip_list) - 1)
-        ip_info = ip_list[random_number]
-        ip_url_next = '://' + ip_info['address'] + ':' + ip_info['port']
-        proxies = {'http': 'http' + ip_url_next, 'https': 'https' + ip_url_next}
-        return random_number, proxies
+# 获取当前时间的微博内容
+def get_content():
+    time_data = ['子时', '丑时', '寅时', '卯时', '辰时', '巳时', '午时', '未时', '申时', '酉时', '戌时', '亥时']
+    now = int(time.strftime('%H', time.localtime(time.time())))
+    now_tm = now % 12
+
+    res_str = ''
+    for x in range(now_tm):
+        res_str += '铛～'
+    res_str = '【' + time_data[math.floor(now / 2)] + '】' + res_str
+    return res_str
 
 
-# 程序主入口
 if __name__ == '__main__':
-    """只是爬取了书籍的第一页,按照评价排序"""
-    start_time = datetime.datetime.now()
-    url = 'https://book.douban.com/tag/?view=type&icn=index-sorttags-all'
-    base_url = 'https://book.douban.com/tag/'
-    html = get_html(url)
-    soup = BeautifulSoup(html, 'html.parser')
-    article_tag_list = soup.find_all(class_='tag-content-wrapper')
-    tagCol_list = soup.find_all(class_='tagCol')
-
-    for table in tagCol_list:
-        """ 整理分析数据 """
-        sub_type_list = []
-        a = table.find_all('a')
-        for book_type in a:
-            sub_type_list.append(book_type.text)
-        article_type_list.append(sub_type_list)
-
-    for sub in article_type_list:
-        for sub1 in sub:
-            title = '==============' + sub1 + '=============='
-            print(title)
-            print(base_url + sub1 + '?start=0' + '&type=S')
-            with open('book.text', 'a', encoding='utf-8') as f:
-                f.write('\n' + title + '\n')
-                f.write(url + '\n')
-            for start in range(0, 2):
-                # (start * 20) 分页是0 20  40 这样的
-                # type=S是按评价排序
-                url = base_url + sub1 + '?start=%s' % (start * 20) + '&type=S'
-                html = get_html(url)
-                soup = BeautifulSoup(html, 'html.parser')
-                li = soup.find_all(class_='subject-item')
-                for div in li:
-                    info = div.find(class_='info').find('a')
-                    img = div.find(class_='pic').find('img')
-                    content = '书名:<%s>' % info['title'] + '  书本图片:' + img['src'] + '\n'
-                    print(content)
-                    with open('book.text', 'a', encoding='utf-8') as f:
-                        f.write(content)
-
-    end_time = datetime.datetime.now()
-    print('耗时: ', (end_time - start_time).seconds)
-
+    build_opener()
+    if login():
+        weibo(get_content())
