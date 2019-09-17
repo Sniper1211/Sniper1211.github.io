@@ -18,4 +18,7 @@ files={
 }
 
 r = requests.post(url, data=payload, files=files)
-print(r.json())
+if r.status_code != 200:
+    print('发布失败')
+else:
+    print('发布成功，去查看吧')
