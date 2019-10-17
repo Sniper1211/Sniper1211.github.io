@@ -4,8 +4,8 @@
 }
 
 body{
-	background: #030317;
-	/*background: linear-gradient(135deg, #F76B1D 0%, #F76B1D 30%, #ffb631 100%) fixed;*/
+	/*background: #030317;*/
+	background: linear-gradient(135deg, #F76B1D 0%, #F76B1D 30%, #ffb631 100%) fixed;
 	/*background-image: url('https://unsplash.it/1820/800/?random');*/
 	opacity: 0,8;
 	max-width: 100%;
