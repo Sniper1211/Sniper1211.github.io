@@ -1,88 +1,309 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
-	<meta charset="UTF-8">
-	<title>🙂haha</title>
-	<link rel="stylesheet" type="text/css" href="lixuex.in/style.css ">
-	<script src="lixuex.in/jquery-2.1.1.min.js"></script>
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李思柰的宇宙 🚀</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-	  ga('create', 'UA-63096412-1', 'auto');
-	  ga('send', 'pageview');
+        body {
+            background: linear-gradient(
+                135deg, 
+                #1a1a2e 0%, 
+                #16213e 50%, 
+                #1a1a2e 100%
+            );
+            color: #fff;
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
 
-	</script>
+        .stars {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background: transparent;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle 1s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradient 3s ease infinite;
+        }
+
+        main {
+            padding: 120px 20px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .profile h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .profile p {
+            font-size: 1.2rem;
+            color: #a0a0a0;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .links-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 20px;
+        }
+
+        .link-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .link-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .platform-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .link-card:hover .platform-icon {
+            transform: rotate(360deg);
+        }
+
+        .link-card h3 {
+            font-size: 1.5rem;
+            color: #fff;
+        }
+
+        .link-card p {
+            text-align: center;
+            color: #a0a0a0;
+            margin-bottom: 1rem;
+        }
+
+        .platform-link {
+            padding: 0.8rem 2rem;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            border-radius: 30px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .platform-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            padding: 1.5rem;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        footer a {
+            color: #a0a0a0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .profile h2 {
+                font-size: 2rem;
+            }
+
+            .profile p {
+                font-size: 1rem;
+            }
+
+            .links-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 自定义滚动条 */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-</style>
-<nav>
-	<h1>😝</h1>
-	<ul>
-		<li><a href="" title=""></a></li>
-	</ul>
-</nav>
-<main>
-<div class="box">
-	<div class="link link-mission">
-		<span class="icon"></span>
-		<a target="_blank" href="https://twitter.com/_lixuexin_" class="button" data-title="𝕏">
-			<span class="line line-top"></span>
-			<span class="line line-left"></span>
-			<span class="line line-right"></span>
-			<span class="line line-bottom"></span>
-			𝕏
-		</a>
-	</div>
-	<div class="link link-play">
-		<span class="icon"></span>
-		<a target="_blank" href="https://www.zhihu.com/people/sniperX" class="button" data-title="分享知识、经验和见解">
-			<span class="line line-top"></span>
-			<span class="line line-left"></span>
-			<span class="line line-right"></span>
-			<span class="line line-bottom"></span>
-			Zhihu
-		</a>
-	</div>
-	<div class="link link-touch">
-		<span class="icon"></span>
-		<a target="_blank" href="http://weibo.com/1273520172/" class="button" data-title="欢迎关注">
-			<span class="line line-top"></span>
-			<span class="line line-left"></span>
-			<span class="line line-right"></span>
-			<span class="line line-bottom"></span>
-			Weibo
-		</a>
-	</div>
-	<div class="tip">
-		<em></em>
-		<span></span>
-	</div>
-</div>
-</main>
-<!-- <div class="menu">
-	Hello World!
-</div> -->
-<footer>
-	<a>&copy;2013-2024 ❤️ 李思柰</a>
-</footer>
-<script>
-	$(function(){
-		$(".link .button").hover(function() {
-			var title = $(this).attr("data-title");
-			$(".tip em").text(title);
-			var pos = $(this).offset().left;
-			var dis = ($(".tip").outerWidth() - $(this).outerWidth())/2;
-			var fin = pos - dis;
-			$(".tip").css({"left":fin+"px"}).animate({"top":195,"opacity":1},300);
-		},function(){
-			$(".tip").animate({"top":160,"opacity":0},300);
-		})
-	})
-</script>
-<script type="text/javascript" src="http://tajs.qq.com/stats?sId=49666873" charset="UTF-8">
-</script>
+    <div class="stars"></div>
+    
+    <nav>
+        <div class="logo">李思柰的宇宙 🚀</div>
+    </nav>
+
+    <main>
+        <section class="profile">
+            <h2>Welcome to My Universe</h2>
+            <p>在这里，我分享我的故事、想法和经历。每一个平台都是我的一个小宇宙，记录着不同维度的我。</p>
+        </section>
+
+        <div class="links-container">
+            <div class="link-card">
+                <div class="platform-icon">🐦</div>
+                <h3>Twitter</h3>
+                <p>在这里，我分享我的国际视角和即时想法</p>
+                <a href="https://twitter.com/_lixuexin_" target="_blank" class="platform-link">
+                    去看看 →
+                </a>
+            </div>
+
+            <div class="link-card">
+                <div class="platform-icon">💡</div>
+                <h3>知乎</h3>
+                <p>在这里，我深度分享知识和个人见解</p>
+                <a href="https://www.zhihu.com/people/sniperX" target="_blank" class="platform-link">
+                    去看看 →
+                </a>
+            </div>
+
+            <div class="link-card">
+                <div class="platform-icon">🌟</div>
+                <h3>微博</h3>
+                <p>在这里，你能看到我的日常点滴</p>
+                <a href="http://weibo.com/1273520172/" target="_blank" class="platform-link">
+                    去看看 →
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <a>©2013-2024 ❤️ 李思柰 | 探索永无止境</a>
+    </footer>
+
+    <script>
+        // 创建星空背景
+        function createStars() {
+            const stars = document.querySelector('.stars');
+            const count = 200;
+
+            for (let i = 0; i < count; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                
+                // 随机位置
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * window.innerHeight;
+                
+                // 随机大小
+                const size = Math.random() * 2;
+                
+                // 随机动画延迟
+                const delay = Math.random() * 1;
+                
+                star.style.left = `${x}px`;
+                star.style.top = `${y}px`;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.animationDelay = `${delay}s`;
+                
+                stars.appendChild(star);
+            }
+        }
+
+        // 页面加载完成后创建星星
+        document.addEventListener('DOMContentLoaded', createStars);
+
+        // 窗口调整大小时重新创建星星
+        window.addEventListener('resize', () => {
+            const stars = document.querySelector('.stars');
+            stars.innerHTML = '';
+            createStars();
+        });
+    </script>
 </body>
 </html>
